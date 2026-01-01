@@ -1,0 +1,25 @@
+.layout {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sidebar {
+  border-right: 1px solid #ddd;
+}
+
+.content {
+  overflow: hidden;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    display: none;
+  }
+}

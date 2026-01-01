@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="card">
+    <h2>Nuevo Chat</h2>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+      <div class="field">
+        <label>Nombre:</label>
+        <input type="text" formControlName="name" />
+        @if (form.get('name')?.invalid && form.get('name')?.touched) {
+        <p class="error">Mínimo 3 caracteres</p>
+        }
+      </div>
+
+      <div class="field">
+        <label>Avatar:</label>
+        <select formControlName="avatar">
+          <option value="😊">😊</option>
+          <option value="😀">😀</option>
+          <option value="👨">👨</option>
+          <option value="👩">👩</option>
+          <option value="🧑">🧑</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Estado:</label>
+        <select formControlName="status">
+          <option value="online">Online</option>
+          <option value="offline">Offline</option>
+        </select>
+      </div>
+
+      <div class="buttons">
+        <button type="button" (click)="cancel()">Cancelar</button>
+        <button type="submit" [disabled]="form.invalid">Crear</button>
+      </div>
+    </form>
+  </div>
+</div>

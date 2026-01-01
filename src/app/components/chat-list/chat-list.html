@@ -1,0 +1,16 @@
+<div class="container">
+  <h2>Chats</h2>
+  <button (click)="createNew()">+ Nuevo</button>
+
+  <div class="list">
+    @for (chat of chats; track chat.id) {
+    <div class="item" (click)="openChat(chat.id)">
+      <span class="avatar">{{ chat.avatar }}</span>
+      <div class="info">
+        <h3>{{ chat.name }}</h3>
+        <p>{{ chat.status }}</p>
+      </div>
+    </div>
+    }
+  </div>
+</div>

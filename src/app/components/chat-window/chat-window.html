@@ -1,0 +1,27 @@
+<div class="container">
+  @if (chat) {
+  <div class="header">
+    <span class="avatar">{{ chat.avatar }}</span>
+    <h2>{{ chat.name }}</h2>
+  </div>
+
+  <div class="messages">
+    @for (msg of messages; track msg.id) {
+    <div [class]="msg.sender === 'user' ? 'msg-user' : 'msg-app'">
+      {{ msg.text }}
+    </div>
+    }
+  </div>
+
+  <div class="input-box">
+    <input type="text" [formControl]="messageControl" placeholder="Mensaje..." />
+    <button (click)="send()" [disabled]="!messageControl.valid">
+      Enviar
+    </button>
+  </div>
+  } @else {
+  <div class="empty">
+    <p>Seleccioná un chat para empezar.</p>
+  </div>
+  }
+</div>
