@@ -23,7 +23,7 @@ export class NewChatComponent {
     this.form = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
       avatar: ['😊', Validators.required],
-      status: ['online', Validators.required]
+      status: ['Conectado', Validators.required]
     });
   }
 
